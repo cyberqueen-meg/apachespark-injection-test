@@ -13,7 +13,7 @@ parser.add_argument('-lh', '--listeninghost', help='Your listening host IP addre
 parser.add_argument('-lp', '--listeningport', help='Your listening host port.')
 parser.add_argument('--check', default=False, action="store_true", help="Checks if the target is exploitable with a sleep test")
 parser.add_argument('--verbose', default=False, action="store_true", help="Verbose mode")
-parser.add_argument('--header', dest="HEADER", action="store, help="Custom header", required=True)
+parser.add_argument('--header', dest="HEADER", action="store", help="Custom header", required=True)
 
 args = parser.parse_args()
 
