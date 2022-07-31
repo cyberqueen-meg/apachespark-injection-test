@@ -3,7 +3,9 @@ Apache Spark Shell Command Injection Vulnerability
 
 A Python POC for exploiting the Apache Spark Shell Command Injection vulnerability. I saw some other POCs out there but they looked mega sus. This one is clean and simple.
 
-I did not discover this exploit/vulnerability. I just wanted to make a safe POC for the community ^.^
+I did not discover this exploit/vulnerability. I just wanted to make a testing tool for the ethical hacking community ^.^
+
+Script by HuskyHacks, optimized for Arch Linux/hunting by CyberQueenMeg
 
 CVE originally discovered by  Kostya Kortchinsky from Databricks.
 
