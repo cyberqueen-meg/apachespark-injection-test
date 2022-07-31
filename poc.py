@@ -16,7 +16,6 @@ parser.add_argument('--verbose', default=False, action="store_true", help="Verbo
 
 args = parser.parse_args()
 
-# nothing to see here, move along!
 headers = {
     'User-Agent': 'CVE-2022-33891 POC',
 }
