@@ -17,7 +17,7 @@ parser.add_argument('--header', action="store_true", help="Custom header", requi
 
 args = parser.parse_args()
 
-header = {args.header}
+header = args.header
 
 headers = {
     'User-Agent': header,
